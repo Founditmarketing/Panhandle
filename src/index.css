@@ -325,6 +325,11 @@ a:hover {
   .nav-logo { font-size: 1.4rem; }
 }
 
+@media (max-width: 480px) {
+  .nav-logo { font-size: 1.25rem; }
+  .nav-logo span { display: none; } /* Drops the word TRAILERS to neatly fit on iPhone */
+}
+
 /* Footer */
 .footer {
   background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
