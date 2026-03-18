@@ -36,7 +36,7 @@ export default function PartnerPortal() {
       </section>
 
       <section className="section-padding" style={{ backgroundColor: 'var(--bg-main)' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'flex-start' }}>
+        <div className="container grid-split" style={{ alignItems: 'flex-start' }}>
           
           <div>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>THE DEALER ADVANTAGE</h2>

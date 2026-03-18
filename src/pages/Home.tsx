@@ -23,7 +23,7 @@ export default function Home() {
         }} />
         
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div className="hero-grid">
             <div>
               <div style={{ 
                 display: 'inline-block', 
@@ -62,7 +62,7 @@ export default function Home() {
       {/* The Backstory Section */}
       <section className="section-padding" style={{ backgroundColor: 'var(--bg-card)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div className="grid-split">
             <div>
               <h2 style={{ fontSize: '2.5rem' }}>WHY WE BUILT <span className="text-accent">IT RIGHT.</span></h2>
               <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--accent-color)', marginBottom: '2rem' }}></div>

@@ -19,7 +19,7 @@ export default function OurEdge() {
       {/* Tech Breakdown */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div className="grid-split">
             <div>
               <img 
                 src="/images/ubolt_detail_1773859844435.png" 
