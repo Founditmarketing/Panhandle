@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import OurEdge from './pages/OurEdge';
 import PartnerPortal from './pages/PartnerPortal';
+import DealerAssets from './pages/DealerAssets';
 import './index.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/our-edge" element={<OurEdge />} />
             <Route path="/partner" element={<PartnerPortal />} />
+            <Route path="/assets" element={<DealerAssets />} />
           </Routes>
         </main>
         <Footer />

@@ -22,6 +22,7 @@ export default function Navbar() {
         <div className="nav-links">
           <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>The Guarantee</Link>
           <Link to="/our-edge" className={`nav-link ${isActive('/our-edge') ? 'active' : ''}`}>Our Edge</Link>
+          <Link to="/assets" className={`nav-link ${isActive('/assets') ? 'active' : ''}`}>Dealer Assets</Link>
           <Link to="/partner" className="btn-primary">Become a Partner</Link>
         </div>
 
@@ -34,6 +35,7 @@ export default function Navbar() {
       <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
         <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={closeMenu}>The Guarantee</Link>
         <Link to="/our-edge" className={`nav-link ${isActive('/our-edge') ? 'active' : ''}`} onClick={closeMenu}>Our Edge</Link>
+        <Link to="/assets" className={`nav-link ${isActive('/assets') ? 'active' : ''}`} onClick={closeMenu}>Dealer Assets</Link>
         <Link to="/partner" className="btn-primary" onClick={closeMenu}>Become a Partner</Link>
       </div>
     </nav>
