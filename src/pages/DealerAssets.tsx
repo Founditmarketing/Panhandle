@@ -1,6 +1,25 @@
-import { Download, FileText, Image as ImageIcon, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Download, FileText, Image as ImageIcon, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function DealerAssets() {
+  const [downloading, setDownloading] = useState<string | null>(null);
+
+  const handleDownload = (filename: string, isZip: boolean = false) => {
+    setDownloading(filename);
+    setTimeout(() => {
+      // Create a simulated downloadable file blob
+      const content = isZip ? "SIMULATED_ZIP_BINARY_DATA" : "Simulated PDF Content for " + filename;
+      const blob = new Blob([content], { type: isZip ? 'application/zip' : 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+      setDownloading(null);
+    }, 1500);
+  };
+
   return (
     <div className="animate-fade-in">
       {/* Header Section */}
@@ -37,8 +56,13 @@ export default function DealerAssets() {
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Includes structural diagrams</li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Outlines the vibration damping benefits</li>
               </ul>
-              <button className="btn-secondary" style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }} onClick={() => alert('Download simulated. In production, this would serve a PDF.')}>
-                <Download size={18} /> Download Spec Sheet
+              <button 
+                className="btn-secondary" 
+                style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', opacity: downloading === 'ubolt-specs.pdf' ? 0.7 : 1 }} 
+                onClick={() => handleDownload('ubolt-specs.pdf')}
+                disabled={downloading !== null}
+              >
+                {downloading === 'ubolt-specs.pdf' ? <><Loader2 size={18} className="animate-spin" /> DOWNLOADING...</> : <><Download size={18} /> Download Spec Sheet</>}
               </button>
             </div>
 
@@ -55,8 +79,13 @@ export default function DealerAssets() {
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Lead time promises</li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Dealership exclusivity terms</li>
               </ul>
-              <button className="btn-secondary" style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }} onClick={() => alert('Download simulated. In production, this would serve a PDF.')}>
-                <Download size={18} /> Download Guarantee
+              <button 
+                className="btn-secondary" 
+                style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', opacity: downloading === 'guarantee-contract.pdf' ? 0.7 : 1 }} 
+                onClick={() => handleDownload('guarantee-contract.pdf')}
+                disabled={downloading !== null}
+              >
+                {downloading === 'guarantee-contract.pdf' ? <><Loader2 size={18} className="animate-spin" /> DOWNLOADING...</> : <><Download size={18} /> Download Guarantee</>}
               </button>
             </div>
 
@@ -73,8 +102,13 @@ export default function DealerAssets() {
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Web-optimized 1080p shots</li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', color: 'var(--silver-300)' }}><CheckCircle size={16} className="text-amber-500"/> Unbranded backgrounds</li>
               </ul>
-              <button className="btn-secondary" style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }} onClick={() => alert('Download simulated. In production, this would serve a ZIP file.')}>
-                <Download size={18} /> Download Photo Pack
+              <button 
+                className="btn-secondary" 
+                style={{ width: '100%', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', opacity: downloading === 'hd-photos-panhandle.zip' ? 0.7 : 1 }} 
+                onClick={() => handleDownload('hd-photos-panhandle.zip', true)}
+                disabled={downloading !== null}
+              >
+                {downloading === 'hd-photos-panhandle.zip' ? <><Loader2 size={18} className="animate-spin" /> DOWNLOADING...</> : <><Download size={18} /> Download Photo Pack</>}
               </button>
             </div>
 

@@ -254,6 +254,9 @@ a:hover {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 
+@keyframes spin { 100% { transform: rotate(360deg); } }
+.animate-spin { animation: spin 1s linear infinite; }
+
 /* Navigation */
 .navbar {
   position: fixed;

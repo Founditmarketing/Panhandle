@@ -1,11 +1,22 @@
 import { useState } from 'react';
-import { AlertCircle, CheckCircle2, CreditCard } from 'lucide-react';
+import { AlertCircle, CheckCircle2, CreditCard, Loader2 } from 'lucide-react';
 
 export default function CapacityTracker() {
-  const [slotsRemaining] = useState(4); // Configurable state
+  const [slotsRemaining, setSlotsRemaining] = useState(4);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isSecured, setIsSecured] = useState(false);
   
+  const handleDeposit = () => {
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setIsSecured(true);
+      setSlotsRemaining(prev => prev - 1);
+    }, 2000);
+  };
+
   return (
-    <div className="glass-panel delay-1" style={{ padding: '2.5rem', borderLeft: '4px solid var(--accent-color)' }}>
+    <div className="glass-panel delay-1" style={{ padding: '2.5rem', borderLeft: `4px solid ${isSecured ? '#10b981' : 'var(--accent-color)'}` }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
         {slotsRemaining > 0 ? (
           <CheckCircle2 className="text-amber-500" size={28} />
@@ -27,9 +38,26 @@ export default function CapacityTracker() {
         }}></div>
       </div>
       
-      {slotsRemaining > 0 ? (
-        <button className="btn-primary" style={{ width: '100%', marginBottom: '1.5rem' }} onClick={() => alert('Stripe Checkout simulated. Would redirect to $500 payment capture.')}>
-          <CreditCard size={18} /> DROP $500 DEPOSIT & CLAIM SLOT
+      {isSecured ? (
+        <div className="animate-fade-in" style={{ padding: '1rem', backgroundColor: 'rgba(16, 185, 129, 0.1)', borderRadius: '6px', borderLeft: '3px solid #10b981', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <CheckCircle2 color="#10b981" size={24} />
+          <div>
+            <span style={{ color: '#10b981', fontWeight: 800, display: 'block' }}>$500 DEPOSIT SECURED</span>
+            <span className="text-muted" style={{ fontSize: '0.85rem' }}>Slot #00{slotsRemaining + 1} locked for your dealership.</span>
+          </div>
+        </div>
+      ) : slotsRemaining > 0 ? (
+        <button 
+          className="btn-primary" 
+          style={{ width: '100%', marginBottom: '1.5rem', opacity: isProcessing ? 0.7 : 1 }} 
+          disabled={isProcessing}
+          onClick={handleDeposit}
+        >
+          {isProcessing ? (
+            <><Loader2 size={18} className="animate-spin" /> SECURING CONNECTION...</>
+          ) : (
+            <><CreditCard size={18} /> DROP $500 DEPOSIT & CLAIM SLOT</>
+          )}
         </button>
       ) : null}
 
