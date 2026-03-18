@@ -40,8 +40,8 @@ export default function Home() {
               }}>
                 DEALER-ONLY EXCLUSIVE
               </div>
-              <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', color: '#fff', textShadow: '0 4px 20px rgba(0,0,0,0.5)', lineHeight: 1 }}>
-                THE <span className="text-accent">"ANTI-FLAKY"</span><br/>GUARANTEE.
+              <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1, textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+                <span className="text-gradient-silver">THE</span> <span className="text-gradient-amber">"ANTI-FLAKY"</span><br/><span className="text-gradient-silver">GUARANTEE.</span>
               </h1>
               <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', margin: '2rem 0', maxWidth: '540px', lineHeight: 1.6 }}>
                 Stop waiting 9 months for aluminum boat trailers. We deliver on time, every time. Built exclusively for dealers in FL, GA, AL, and LA who protect their margins.
@@ -87,15 +87,15 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-               <div className="glass-panel" style={{ padding: '3rem 2rem', textAlign: 'center' }}>
+               <div className="glass-panel delay-1" style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                  <Factory size={48} className="text-accent" style={{ margin: '0 auto 1.5rem' }} />
                  <h4 style={{ margin: 0, fontSize: '1.3rem' }}>Dealer-Only</h4>
-                 <p className="text-secondary" style={{ fontSize: '1rem', marginTop: '0.75rem' }}>We don't compete with you for retail clients.</p>
+                 <p className="text-muted" style={{ fontSize: '1rem', marginTop: '0.75rem' }}>We don't compete with you for retail clients.</p>
                </div>
-               <div className="glass-panel" style={{ padding: '3rem 2rem', textAlign: 'center', transform: 'translateY(2rem)' }}>
+               <div className="glass-panel delay-2" style={{ padding: '3rem 2rem', textAlign: 'center', transform: 'translateY(2rem)' }}>
                  <Anchor size={48} className="text-accent" style={{ margin: '0 auto 1.5rem' }} />
                  <h4 style={{ margin: 0, fontSize: '1.3rem' }}>Gulf Coast Fast</h4>
-                 <p className="text-secondary" style={{ fontSize: '1rem', marginTop: '0.75rem' }}>Minimized logistics time to the Panhandle & beyond.</p>
+                 <p className="text-muted" style={{ fontSize: '1rem', marginTop: '0.75rem' }}>Minimized logistics time to the Panhandle & beyond.</p>
                </div>
             </div>
           </div>

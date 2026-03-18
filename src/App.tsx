@@ -9,6 +9,7 @@ import './index.css';
 function App() {
   return (
     <Router>
+      <div className="bg-mesh"></div>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <main style={{ flex: 1, paddingTop: '70px' }}>

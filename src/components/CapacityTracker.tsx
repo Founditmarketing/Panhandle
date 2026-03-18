@@ -5,7 +5,7 @@ export default function CapacityTracker() {
   const [slotsRemaining] = useState(4); // Configurable state
   
   return (
-    <div className="glass-panel" style={{ padding: '2rem', borderLeft: '4px solid var(--accent-color)' }}>
+    <div className="glass-panel delay-1" style={{ padding: '2rem', borderLeft: '4px solid var(--accent-color)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
         {slotsRemaining > 0 ? (
           <CheckCircle2 className="text-accent" size={28} />

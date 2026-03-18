@@ -25,8 +25,8 @@ export default function PartnerPortal() {
             <div style={{ display: 'inline-block', backgroundColor: 'rgba(245, 158, 11, 0.1)', color: 'var(--accent-color)', padding: '0.5rem 1rem', borderRadius: '4px', fontFamily: 'var(--font-heading)', fontWeight: 'bold', letterSpacing: '2px', marginBottom: '1.5rem', fontSize: '0.85rem' }}>
               B2B WHOLESALE APPLICATION
             </div>
-            <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', color: '#fff', lineHeight: 1 }}>
-              PARTNER WITH <span className="text-accent">PANHANDLE PRO.</span>
+            <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1 }}>
+              <span className="text-gradient-silver">PARTNER WITH</span> <br/><span className="text-gradient-amber">PANHANDLE PRO.</span>
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', lineHeight: 1.6 }}>
               We don't do retail. We don't compete with our dealers. We build premium aluminum marine trailers exclusive to authorized dealers in the Gulf Coast. Predictable lead times, protected margins.

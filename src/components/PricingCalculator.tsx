@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Calculator, ArrowRight } from 'lucide-react';
 
 export default function PricingCalculator() {
@@ -39,7 +39,7 @@ export default function PricingCalculator() {
                 min="1" 
                 value={volume} 
                 onChange={(e) => setVolume(Number(e.target.value))}
-                style={{ width: '100%', padding: '0.75rem', backgroundColor: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)', color: 'white', borderRadius: '4px' }}
+                className="glass-input"
               />
             </div>
             <div>
@@ -47,7 +47,7 @@ export default function PricingCalculator() {
               <select 
                 value={capacity} 
                 onChange={(e) => setCapacity(Number(e.target.value))}
-                style={{ width: '100%', padding: '0.75rem', backgroundColor: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)', color: 'white', borderRadius: '4px' }}
+                className="glass-input"
               >
                 <option value={3000}>3,000 lbs (Single Axle)</option>
                 <option value={5000}>5,000 lbs (Tandem)</option>
@@ -80,7 +80,7 @@ export default function PricingCalculator() {
               placeholder="sales@yourdealership.com"
               value={email} 
               onChange={(e) => setEmail(e.target.value)}
-              style={{ width: '100%', padding: '0.75rem', backgroundColor: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)', color: 'white', borderRadius: '4px' }}
+              className="glass-input"
             />
           </div>
           

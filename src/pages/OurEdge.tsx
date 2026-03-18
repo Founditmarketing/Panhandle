@@ -7,7 +7,7 @@ export default function OurEdge() {
       <section style={{ backgroundColor: 'var(--bg-card)', padding: '6rem 0 4rem', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container text-center">
           <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1rem' }}>
-            BUILT TO LAST. <span className="text-accent">NOT JUST WELDED TO BREAK.</span>
+            <span className="text-gradient-silver">BUILT TO LAST.</span> <br/><span className="text-gradient-amber">NOT JUST WELDED TO BREAK.</span>
           </h1>
           <p className="text-secondary" style={{ fontSize: '1.25rem', maxWidth: '800px', margin: '0 auto' }}>
             Your customers demand a trailer that survives the salt, the vibration, and the launch ramp. 
